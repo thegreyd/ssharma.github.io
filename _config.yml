@@ -1,0 +1,19 @@
+# Site settings
+title: Siddharth Sharma
+email: sid.sharma0@gmail.com
+description: Becoming a better programmer
+baseurl: "" # optional
+url: "https://thegreyd.github.io"
+twitter_username: thegreyd
+github_username: thegreyd
+github_repo: thegreyd/thegreyd.github.io
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+excerpt_separator: "<!-- more -->"
+paginate: 5
+paginate_path: "/blog/page:num/"
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
