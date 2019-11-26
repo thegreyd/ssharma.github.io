@@ -1,0 +1,59 @@
+---
+layout: post
+title: 'Adding background pattern/texture - part 2 '
+date: '2012-05-04T02:10:00-04:00'
+tags:
+- Css
+- HTML
+- adding
+- background
+- css3
+- pattern
+- rgba
+- texture
+- image
+- website
+tumblr_url: http://thegreyd.tumblr.com/post/22336914133/adding-background-patterntexture-part-2
+---
+<p>In my <a href="http://thegreyd.tumblr.com/post/22136418733/adding-background-pattern-texture" title="adding background texture part 1" target="_blank">previous post</a>, I discussed how to add a texture and give it a tinge of your choice of color, with the help of an image editor. But that is by far, not the most efficient and effective way, and you do not want to do that. Here is what you want to do- </p>
+<p><strong><em>Preface :</em></strong></p>
+<p>As I mentioned about the opacity and rgba values, they are the most widely used ways to do this task and many more complex ones. So I digged around the internet and found a really nice post explaining the difference between the two. Go read it <a href="http://deepubalan.com/blog/2010/03/29/rgba-vs-opacity-the-difference-explained/" title="RGBa vs Opacity: The Difference Explained" target="_blank">here</a>.</p>
+<p>As an emerging front end web developer, looking up the source code of various websites should be a high priority on the list; you learn a lot about the best practices. I use Chrome as my primary browser ,but I find the native developer tools of Firefox(13 beta) much more advanced.</p>
+<p>I have been noticing(more closely) many popular web pages using patterns/textures. Among them are <a href="http://youtube.com" title="youtube - videos" target="_blank">Youtube.com</a> and Firefox&rsquo;s(13 beta) new default home page interface(search and new speed dial like layout page) ,(Also dug up the url of those patterns&ndash;will upload them later). I think there is no reason why anyone should not use a background pattern. Actually it makes the experience much more intuitive.</p>
+<p>Opacity is a property that applies to all the child elements of the parent element for which it&rsquo;s defined . That means text, images and anything in between. So here we do not use opacity. While it is still useful in many other cases (not mentioned here).</p>
+<p> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+<p>(Make sure to read the above mentioned article source.) </p>
+<p>Previously I added a layer on top of the image and tweaked the opacity property of that layer in an image editor. This can be easily done in CSS. We have rgba values, where the fourth parameter is the opacity which ranges from 0.0 ( completely invisible/transparent) to 1 (fully opaque),  letting you tweak the color&rsquo;s effect by virtue of it&rsquo;s transparency. </p>
+<ul><li>First reset the body &ndash; padding,margin,border values to 0   </li>
+<li>In the body specify  &ndash; background image url</li>
+<li>Then wrap a div around the body content with some id, just after the opening body tag and in CSS, set its height and width to 100%.   </li>
+<li>Now set its background to any color of your choice, with its rgb value . At first it will be fully opaque and will lie over the body background. </li>
+<li>Add an &lsquo;a&rsquo; , to make it 'rgba&rsquo; and add another value for transparency (within range 0-1) inside brackets with a comma. This makes it partially visible.</li>
+<li>Tweak the last 'a&rsquo; value to your liking. </li>
+</ul><p>This method essentially is the same as previous one but much easier and it needs only CSS.</p>
+<p>Here is the code for reference &ndash;</p>
+<blockquote>
+<p>&lt;html&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;head&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;title&gt;background-test&lt;/title&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;style type=&ldquo;text/css&rdquo;&gt;</p>
+<p><span class="Apple-tab-span"> </span>body{</p>
+<p><span class="Apple-tab-span"> </span>padding:0;</p>
+<p><span class="Apple-tab-span"> </span>border:0;</p>
+<p><span class="Apple-tab-span"> </span>margin:0;</p>
+<p><span class="Apple-tab-span"> </span>background-image:url(pattern.png);</p>
+<p><span class="Apple-tab-span"> </span>}</p>
+<p><span class="Apple-tab-span"> </span>div#container{</p>
+<p><span class="Apple-tab-span"> </span>height:100%;</p>
+<p><span class="Apple-tab-span"> </span>width:100%;</p>
+<p><span class="Apple-tab-span"> </span>background-color:rgba(255,213,130,0.5);</p>
+<p><span class="Apple-tab-span"> </span>}</p>
+<p><span class="Apple-tab-span"> </span>&lt;/style&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;/head&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;body&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;div id=&ldquo;container&rdquo;&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;h1&gt;Tweaking Background with RGBa values&lt;/h1&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;/div&gt;</p>
+<p><span class="Apple-tab-span"> </span>&lt;/body&gt;</p>
+<p>&lt;/html&gt; </p>
+</blockquote>

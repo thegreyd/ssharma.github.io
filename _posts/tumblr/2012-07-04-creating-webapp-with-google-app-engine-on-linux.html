@@ -1,0 +1,35 @@
+---
+layout: post
+title: Creating WebApp with Google App Engine on Linux Mint
+date: '2012-07-04T14:14:00-04:00'
+tags:
+- app engine
+- google
+- linux mint
+- udacity
+- web
+- python
+- application
+- ubuntu
+tumblr_url: http://thegreyd.tumblr.com/post/26482466826/creating-webapp-with-google-app-engine-on-linux
+---
+<p>After completing the Unit 1 of CS253 Web Application Engineering on Udacity, you have to make your web application with Google App Engine. There is no GUI program in the App-engine SDK on Linux, so it was a wee bit harder to set it up. This is how i did it on Linux Mint 13.</p>
+<p><em>Note: This should also work for Ubuntu and other Ubuntu-based distros.</em></p>
+<ul><li>Sign in to : <a href="https://appengine.google.com/" target="_blank">https://appengine.google.com/</a> . Create a new app.</li>
+<li>Give a valid Application Identifier. <em>In my case</em> : udacious-cs.appspot.com</li>
+<li>Give a title and click <em>Create Application.</em></li>
+<li>Python 2.7 should already be installed. To check: open Terminal and type <em>python</em> and hit Enter. It should display the version no. If not, run Update Manager.</li>
+<li>Download Google App Engine SDK for Python, platform - Linux, from here:  <a href="https://developers.google.com/appengine/downloads" target="_blank">https://developers.google.com/appengine/downloads</a> . Unzip it.<em><span> <em>In my case :</em> </span></em> ~/Downloads/google_appengine</li>
+<li>Create a new folder for app files<em><span>. </span></em><span></span><em><span> </span></em><em><em>In my case :</em> </em> ~/Downloads/projectapp</li>
+<li><span></span><span>Create 2 files, <em>app.yaml</em> and a <em>.py</em> in the folder - with content from here - <a href="https://developers.google.com/appengine/docs/python/gettingstartedpython27/helloworld" target="_blank">https://developers.google.com/appengine/docs/python/gettingstartedpython27/helloworld</a> </span><span></span></li>
+<li><em>In my case: </em><em>app.yaml</em> and <em>helloudacity.py.</em></li>
+<li>Edit <em>helloudacity.py</em> to say &lsquo;Hello, Udacity!&rsquo; instead of 'Hello, webapp World!&rsquo;. (line 6)</li>
+<li>Edit <em>app.yaml</em> , and replace 'application : helloworld&rsquo;, with 'application : [Application-Identifier in step2]&rsquo; (line 1). <em>In my case :  </em>'application: udacious-cs&rsquo;.</li>
+<li>Edit app.yaml, and replace 'script: helloworld.app&rsquo; with 'script: [.py file name].app&rsquo; (line 9). <em>In my case : </em>'script: helloudacity.app&rsquo;.</li>
+<li>To run the server and app locally : Open Terminal and run command(similar to): <em>Downloads/google_appengine/dev_appserver.py Downloads/projectapp/</em> . Open <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> in your browser to see your app working. </li>
+<li>You can edit .py file and the app will be updated in the browser. To stop server press Ctr+C in Terminal.</li>
+<li>To deploy your app online (to update the new app you already created in step 1) : Open Terminal and run command(similar to): <em>Downloads/google_appengine/appcfg.py update Downloads/projectapp/ </em></li>
+<li>Enter your google email and password, when prompted and hit Enter. The app online should be updated.</li>
+<li>You should now see a dashboard for your app on <a href="https://appengine.google.com" target="_blank">https://appengine.google.com</a> with a graph and other info.</li>
+<li>Your app is ready : <a href="http://www.udacious-cs.appspot.com" target="_blank">http://www.udacious-cs.appspot.com</a> . </li>
+</ul><p>That was exciting.</p>
